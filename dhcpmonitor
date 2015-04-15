@@ -1,0 +1,16 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          dhcpmonitor
+# Required-Start:    $all
+# Required-Stop:     
+# Default-Start:     5 
+# Default-Stop:      0 1 2 3 4
+# Short-Description: Start DHCPMonitor daemon at boot time
+# Description:       Open port 67(dhcp) and start the DHCPmon.
+# X-Interactive:     true
+### END INIT INFO
+
+iptables -I INPUT -p udp --dport 67 -j ACCEPT
+/bin/DHCPmon&
+

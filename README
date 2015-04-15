@@ -1,0 +1,10 @@
+How to install:
+
+Run sudo visudo and add the following lines to the end of the file:
+
+#Allow administrator to run DHCPmon as root without a password
+%administrator ALL=NOPASSWD: /bin/DHCPmon
+
+Then add the command "sudo /bin/DHCPmon" to the startup aplications (using the gui)
+
+Finally open udp port 67 on the firewall
